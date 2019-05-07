@@ -1,38 +1,47 @@
 {
-    "name": "greyfinch",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@material-ui/core": "^3.9.3",
-        "@material-ui/icons": "^3.0.2",
-        "classnames": "^2.2.6",
-        "eslint": "^5.16.0",
-        "immutable": "^4.0.0-rc.12",
-        "prop-types": "^15.7.2",
-        "react": "^16.8.6",
-        "react-dom": "^16.8.6",
-        "react-router-dom": "^4.3.1",
-        "react-scripts": "^3.0.0",
-        "typeface-roboto": "0.0.54"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test"
-    },
-    "eslintConfig": {
-        "extends": "react-app"
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    }
+  "name": "greyfinch",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "emotion": "^10.0.9",
+    "eslint": "^5.16.0",
+    "immutable": "^4.0.0-rc.12",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^3.0.0",
+    "typeface-roboto": "0.0.54"
+  },
+  "scripts": {
+    "start": "concurrently --names 'react,views' --handle-input npm:dev npm:views",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "dev": "react-scripts start",
+    "views": "views-morph src --watch --as react-dom",
+    "prebuild": "views-morph src --as react-dom"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@viewstools/morph": "^18.2.0",
+    "concurrently": "^4.1.0"
+  }
 }
