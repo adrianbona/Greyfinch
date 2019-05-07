@@ -15,9 +15,8 @@ const get = (url) => {
 }
 
 export const getGiphys = () => {
-    const animals = ['cat', 'dog', 'elephant', 'lion', 'monkey']
-    return get(`${API_HOST}${API_PATH}/search?q=${animals.join('+')}&api_key=${API_KEY}`).then((response) => {
-        return immutable.fromJS(response.data)
+    return get(`${API_HOST}${API_PATH}/random?api_key=${API_KEY}`).then((response) => {
+        return immutable.fromJS(response.data.data)
     }).catch(() => {
         return immutable.List()
     })

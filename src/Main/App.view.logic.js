@@ -1,9 +1,10 @@
 import App from './App.view.js'
 import React from 'react'
-import {getGiphys} from '../Services/Giphy'
 
-let AppLogic = props => {
-    getGiphys()
-    return <App {...props}/>
+export default class AppLogic extends React.Component {
+    render =() => {
+        return (
+            <App/>
+        )
+    }
 }
-export default AppLogic

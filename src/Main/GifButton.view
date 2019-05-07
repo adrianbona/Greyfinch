@@ -1,0 +1,7 @@
+UseButton Vertical
+    Button
+        onClick <
+        text Click me to randomize!
+
+    Avatar Image
+        source <gif

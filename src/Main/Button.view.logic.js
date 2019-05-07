@@ -11,6 +11,8 @@ export default class ButtonLogic extends React.Component {
     }
 
     onClick = event => {
+        const {onClick} = this.props
+
         this.setState({isActive: !this.state.isActive}, () => {
             setTimeout(() => {
                 if (this.willUnmount) return
@@ -19,12 +21,14 @@ export default class ButtonLogic extends React.Component {
             }, 150)
         })
 
-        if (this.props.onClick) {
-            this.props.onClick(event)
+        if (onClick) {
+            onClick(event)
         }
     }
 
     render() {
-        return <Button {...this.state} {...this.props} onClick={this.onClick}/>
+        return (
+            <Button {...this.state} {...this.props} onClick={this.onClick}/>
+        )
     }
 }

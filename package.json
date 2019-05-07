@@ -15,8 +15,8 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^3.0.0",
-    "typeface-roboto": "0.0.54",
-    "react-spring": "^8.0.20"
+    "react-spring": "^8.0.20",
+    "typeface-roboto": "0.0.54"
   },
   "scripts": {
     "start": "concurrently --names 'react,views' --handle-input npm:dev npm:views",
