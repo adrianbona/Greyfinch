@@ -15,7 +15,8 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^3.0.0",
-    "typeface-roboto": "0.0.54"
+    "typeface-roboto": "0.0.54",
+    "react-spring": "^8.0.20"
   },
   "scripts": {
     "start": "concurrently --names 'react,views' --handle-input npm:dev npm:views",
@@ -43,5 +44,7 @@
   "devDependencies": {
     "@viewstools/morph": "^18.2.0",
     "concurrently": "^4.1.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "greyfinch@0.1.0"
 }

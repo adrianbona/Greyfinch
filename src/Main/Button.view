@@ -1,0 +1,9 @@
+Button Vertical
+    onClick <
+    scale 1
+    transformOriginX left
+    transformOriginY top
+    when <isActive
+    scale 1.25 spring
+    Text
+    text <

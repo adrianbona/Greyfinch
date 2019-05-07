@@ -1,0 +1,11 @@
+UseButton Vertical
+    text Button.view
+    Button
+        onClick <
+        text click me
+
+    Text
+    onWhen <count
+    text the button was clicked Times times
+    Times Text
+    text <count
