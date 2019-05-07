@@ -3,6 +3,7 @@ import React from 'react'
 import {getGiphys} from '../Services/Giphy'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import withStyles from '@material-ui/core/styles/withStyles'
+import * as PropTypes from 'prop-types'
 
 const styles = ({
     progress: {
@@ -59,6 +60,10 @@ class GifButtonLogic extends React.Component {
                 onClick={this.handleClick}/>
         )
     }
+}
+
+GifButtonLogic.propTypes = {
+    classes: PropTypes.object.isRequired,
 }
 
 export default withStyles(styles)(GifButtonLogic)

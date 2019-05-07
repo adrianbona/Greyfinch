@@ -1,7 +1,8 @@
 import Button from './Button.view.js'
 import React from 'react'
+import * as PropTypes from 'prop-types'
 
-export default class ButtonLogic extends React.Component {
+class ButtonLogic extends React.Component {
     state = {
         isActive: false,
     }
@@ -32,3 +33,9 @@ export default class ButtonLogic extends React.Component {
         )
     }
 }
+
+ButtonLogic.propTypes = {
+    onClick: PropTypes.func.isRequired,
+}
+
+export default ButtonLogic
