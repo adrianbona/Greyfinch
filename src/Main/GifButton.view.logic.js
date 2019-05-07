@@ -1,13 +1,29 @@
 import GifButton from './GifButton.view.js'
 import React from 'react'
 import {getGiphys} from '../Services/Giphy'
+import CircularProgress from '@material-ui/core/CircularProgress'
+import withStyles from '@material-ui/core/styles/withStyles'
 
-export default class GifButtonLogic extends React.Component {
+const styles = ({
+    progress: {
+        color: 'rgba(0, 206, 124, 0.7)',
+        animationDuration: '550ms',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: '100px',
+    },
+})
+
+class GifButtonLogic extends React.Component {
     state = {
         gif: null,
     }
 
     componentDidMount = () => {
+        this.updateGifFromGiphy()
+    }
+
+    updateGifFromGiphy = () => {
         getGiphys().then((response) => {
             this.setState({
                 gif: response
@@ -19,23 +35,30 @@ export default class GifButtonLogic extends React.Component {
         this.setState({
             gif: null
         }, () => {
-            getGiphys().then((response) => {
-                this.setState({
-                    gif: response
-                })
-            })
+            this.updateGifFromGiphy()
         })
     }
 
     render = () => {
+        const {classes} = this.props
+
         if (!this.state.gif) {
-            return null
+            return (
+                <CircularProgress
+                    variant="indeterminate"
+                    disableShrink
+                    className={classes.progress}
+                    size={50}
+                    thickness={5}/>
+            )
         }
 
         return (
             <GifButton
-                gif={this.state.gif.get('image_url')}
+                gif={this.state.gif.get('fixed_height_downsampled_url')}
                 onClick={this.handleClick}/>
         )
     }
 }
+
+export default withStyles(styles)(GifButtonLogic)

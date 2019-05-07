@@ -15,7 +15,10 @@ const get = (url) => {
 }
 
 export const getGiphys = () => {
-    return get(`${API_HOST}${API_PATH}/random?api_key=${API_KEY}`).then((response) => {
+    const animals = ['cat', 'dog', 'elephant', 'lion', 'monkey']
+    const animal =  animals[Math.floor(Math.random() * animals.length)]
+
+    return get(`${API_HOST}${API_PATH}/random?api_key=${API_KEY}&tag=${animal}&rating=G`).then((response) => {
         return immutable.fromJS(response.data.data)
     }).catch(() => {
         return immutable.List()

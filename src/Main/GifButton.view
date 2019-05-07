@@ -1,7 +1,9 @@
 UseButton Vertical
+    alignItems center
+    justifyContent center
+    Avatar Image
+        onClick <
+        source <gif
     Button
         onClick <
-        text Click me to randomize!
-
-    Avatar Image
-        source <gif
+        text Click me 🙏🏼

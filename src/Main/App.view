@@ -3,6 +3,6 @@ App Vertical
     flexBasis auto
     flexGrow 1
     flexShrink 1
-    justifyContent center
-
+    Text
+        text Welcome to our Giphy Experiment
     GifButton
